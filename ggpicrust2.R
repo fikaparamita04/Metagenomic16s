@@ -1,3 +1,32 @@
+install.packages("devtools")
+install.packages("usethis")
+install.packages("MicrobiomeStat")
+install.packages("GGally")
+library("devtools")
+library("usethis")
+
+devtools::install_github("cafferychen777/ggpicrust2")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+
+pkgs <- c("phyloseq", "ALDEx2", "SummarizedExperiment", "Biobase", "devtools",
+          "ComplexHeatmap", "BiocGenerics", "BiocManager", "metagenomeSeq",
+          "Maaslin2", "edgeR", "lefser", "limma", "KEGGREST", "DESeq2")
+
+for (pkg in pkgs) {
+  if (!requireNamespace(pkg, quietly = TRUE))
+    BiocManager::install(pkg)
+}
+
+library(readr)
+library(MicrobiomeStat)
+library(GGally)
+library(ggpicrust2)
+library(tibble)
+library(tidyverse)
+library(ggprism)
+library(patchwork)
+
 # Use the example data in ggpicrust2 package
 
 # Analyze the KO data
