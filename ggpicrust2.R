@@ -2,6 +2,7 @@ install.packages("devtools")
 install.packages("usethis")
 install.packages("MicrobiomeStat")
 install.packages("GGally")
+install.packages("tidyverse")
 library("devtools")
 library("usethis")
 
